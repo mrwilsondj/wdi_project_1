@@ -3,8 +3,8 @@ class CreateCollectors < ActiveRecord::Migration
     create_table :collectors do |t|
       # int(id) gets made automatically
       t.string    :name
-      t.text      :bio
       t.string    :email
+      t.text      :bio
 
       t.timestamps
     end
