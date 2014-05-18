@@ -1,41 +1,4 @@
 Rails.application.routes.draw do
-  resources :vinylmanias
-  resources :collections
-  resources :records
-
-end
-
-#   Prefix Verb   URI Pattern                     Controller#Action
-#     vinylmanias GET    /vinylmanias(.:format)          vinylmanias#index
-#                 POST   /vinylmanias(.:format)          vinylmanias#create
-#  new_vinylmania GET    /vinylmanias/new(.:format)      vinylmanias#new
-# edit_vinylmania GET    /vinylmanias/:id/edit(.:format) vinylmanias#edit
-#      vinylmania GET    /vinylmanias/:id(.:format)      vinylmanias#show
-#                 PATCH  /vinylmanias/:id(.:format)      vinylmanias#update
-#                 PUT    /vinylmanias/:id(.:format)      vinylmanias#update
-#                 DELETE /vinylmanias/:id(.:format)      vinylmanias#destroy
-
-
-
-#     collections GET    /collections(.:format)          collections#index
-#                 POST   /collections(.:format)          collections#create
-#  new_collection GET    /collections/new(.:format)      collections#new
-# edit_collection GET    /collections/:id/edit(.:format) collections#edit
-#      collection GET    /collections/:id(.:format)      collections#show
-#                 PATCH  /collections/:id(.:format)      collections#update
-#                 PUT    /collections/:id(.:format)      collections#update
-#                 DELETE /collections/:id(.:format)      collections#destroy
-
-
-    #     records GET    /records(.:format)              records#index
-    #             POST   /records(.:format)              records#create
-    #  new_record GET    /records/new(.:format)          records#new
-    # edit_record GET    /records/:id/edit(.:format)     records#edit
-    #      record GET    /records/:id(.:format)          records#show
-    #             PATCH  /records/:id(.:format)          records#update
-    #             PUT    /records/:id(.:format)          records#update
-    #             DELETE /records/:id(.:format)          records#destroy
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -90,4 +53,4 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+end

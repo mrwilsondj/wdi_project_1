@@ -11,22 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516225306) do
+ActiveRecord::Schema.define(version: 20140518060928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "collections", force: true do |t|
+    t.integer  "collector_id"
+    t.integer  "vinyl_record_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "collectors", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "hashed_password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "records", force: true do |t|
+  create_table "vinyl_records", force: true do |t|
+    t.string   "artist"
+    t.string   "releases"
+    t.string   "lables"
+    t.string   "searching"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
