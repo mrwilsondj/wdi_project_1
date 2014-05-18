@@ -1,56 +1,30 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  resources :collectors
+  resources :vinyl_records
+  resources :collections
+#            Prefix Verb   URI Pattern                       Controller#Action
+#        collectors GET    /collectors(.:format)             collectors#index
+#                   POST   /collectors(.:format)             collectors#create
+#     new_collector GET    /collectors/new(.:format)         collectors#new
+#    edit_collector GET    /collectors/:id/edit(.:format)    collectors#edit
+#         collector GET    /collectors/:id(.:format)         collectors#show
+#                   PATCH  /collectors/:id(.:format)         collectors#update
+#                   PUT    /collectors/:id(.:format)         collectors#update
+#                   DELETE /collectors/:id(.:format)         collectors#destroy
+#     vinyl_records GET    /vinyl_records(.:format)          vinyl_records#index
+#                   POST   /vinyl_records(.:format)          vinyl_records#create
+#  new_vinyl_record GET    /vinyl_records/new(.:format)      vinyl_records#new
+# edit_vinyl_record GET    /vinyl_records/:id/edit(.:format) vinyl_records#edit
+#      vinyl_record GET    /vinyl_records/:id(.:format)      vinyl_records#show
+#                   PATCH  /vinyl_records/:id(.:format)      vinyl_records#update
+#                   PUT    /vinyl_records/:id(.:format)      vinyl_records#update
+#                   DELETE /vinyl_records/:id(.:format)      vinyl_records#destroy
+#       collections GET    /collections(.:format)            collections#index
+#                   POST   /collections(.:format)            collections#create
+#    new_collection GET    /collections/new(.:format)        collections#new
+#   edit_collection GET    /collections/:id/edit(.:format)   collections#edit
+#        collection GET    /collections/:id(.:format)        collections#show
+#                   PATCH  /collections/:id(.:format)        collections#update
+#                   PUT    /collections/:id(.:format)        collections#update
+#                   DELETE /collections/:id(.:format)        collections#destroy
 end
