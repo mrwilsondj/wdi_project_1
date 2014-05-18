@@ -1,2 +1,17 @@
-<h1>Collector#index</h1>
-<p>Find me in app/views/collector/index.html.erb</p>
+<h2>Record Collectors</h2>
+<ul class="collectors">
+  <% @collectors.each do |collector| %>
+    <li>
+      <h4 class="collector_name"><%= link_to collector.name, "/collectors/#{collector.id}" %></h4>
+      <p>
+        <ul class="collectors">
+        <% collector.vinyl_records.each do |vinyl_record| %>
+          <li class="vinyl_record_title">
+            <%= link_to vinyl_record.title, "/collectors/#{collector.id}" %>
+          </li>
+        <% end %>
+        </ul>
+      </p>
+    </li>
+  <% end %>
+</ul>

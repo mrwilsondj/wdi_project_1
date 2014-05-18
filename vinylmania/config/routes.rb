@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # root route
+  root to: "home#index"
+
   get 'vinyl_record/show'
 
   get 'vinyl_record/edit'
@@ -7,17 +11,23 @@ Rails.application.routes.draw do
 
   get 'vinyl_record/create'
 
-  get 'collector/index'
+  # get ALL collectors
+  get '/collectors' => 'collectors#index'
 
-  get 'collector/show'
+  # get ONE collector
+  get '/collectors/:id' => 'collectors#show'
 
-  get 'collector/new'
+  # show NEW collector form
+  get '/collector/new' => 'collectors#new'
 
-  get 'collector/create'
+  # process collector CREATE action from form
+  post "/collectors" => 'collectors#create'
 
-  get 'collector/login'
+  # show LOGIN form
+  get '/collector/login' => 'collectors#login'
 
-  get 'collector/process_login'
+  # process login form
+  post '/collector/login' => 'collectors#process_login'
 
   resources :collectors
   resources :vinyl_records
