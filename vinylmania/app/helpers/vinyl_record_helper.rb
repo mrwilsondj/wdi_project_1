@@ -1,0 +1,2 @@
+module VinylRecordHelper
+end

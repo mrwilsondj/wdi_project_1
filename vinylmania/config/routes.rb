@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'vinyl_record/show'
+
+  get 'vinyl_record/edit'
+
+  get 'vinyl_record/update'
+
+  get 'vinyl_record/create'
+
+  get 'collector/index'
+
+  get 'collector/show'
+
+  get 'collector/new'
+
+  get 'collector/create'
+
+  get 'collector/login'
+
+  get 'collector/process_login'
+
   resources :collectors
   resources :vinyl_records
   resources :collections
