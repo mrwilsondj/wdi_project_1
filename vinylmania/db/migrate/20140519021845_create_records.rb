@@ -1,6 +1,6 @@
-class CreateVinylRecords < ActiveRecord::Migration
+class CreateRecords < ActiveRecord::Migration
   def change
-    create_table :vinyl_records do |t|
+    create_table :records do |t|
       t.string :artist
       t.string :releases
       t.string :lables

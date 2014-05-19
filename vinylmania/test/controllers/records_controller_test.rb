@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CollectorControllerTest < ActionController::TestCase
+class RecordsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
@@ -16,18 +16,13 @@ class CollectorControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test "should get edit" do
+    get :edit
     assert_response :success
   end
 
-  test "should get login" do
-    get :login
-    assert_response :success
-  end
-
-  test "should get process_login" do
-    get :process_login
+  test "should get delete" do
+    get :delete
     assert_response :success
   end
 

@@ -1,0 +1,30 @@
+<div class="records index">
+  <h2>List of Vinyl Records</h2>
+
+  <%= link_to("Add New Record", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Record list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Artist</th>
+      <th>Releases</th>
+      <th>Label</th>
+      <th>Searching</th>
+    </tr>
+    <% @records.each do |record| %>
+    <tr>
+      <td><%= record.artist %></td>
+      <td><%= record.releases %></td>
+      <td><%= record.lables %></td>
+      <td><%= record.searching %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => record.id}, :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- 09_02 -->
