@@ -1,11 +1,9 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
-<div class="subjects new">
+<div class="records new">
   <h2>Create Record</h2>
 
   <%= form_for(:record, :url => {:action => 'create'}) do |f| %>
 
-    <table summary="Subject form fields">
+    <table summary="Record form fields">
       <tr>
         <th>Artists</th>
         <td><%= f.text_field(:artist) %></td>
@@ -25,8 +23,10 @@
     </table>
 
     <div class="form-buttons">
-      <%= submit_tag("Create Subject") %>
+      <%= submit_tag("Create Record") %>
     </div>
 
   <% end %>
 </div>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>

@@ -1,2 +1,32 @@
-<h1>Records#edit</h1>
-<p>Find me in app/views/records/edit.html.erb</p>
+<div class="records edit">
+  <h2>Update Record</h2>
+
+  <%= form_for(:record, :url => {:action => 'update', :id => @record.id}) do |f| %>
+
+    <table summary="Record form fields">
+      <tr>
+        <th>Artists</th>
+        <td><%= f.text_field(:artist) %></td>
+      </tr>
+      <tr>
+        <th>Albums</th>
+        <td><%= f.text_field(:releases) %></td>
+      </tr>
+      <tr>
+        <th>Labels</th>
+        <td><%= f.text_field(:lables) %></td>
+      </tr>
+      <tr>
+        <th>Searching</th>
+        <td><%= f.text_field(:searching) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Record") %>
+    </div>
+
+  <% end %>
+</div>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>

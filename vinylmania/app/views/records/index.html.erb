@@ -1,7 +1,7 @@
 <div class="records index">
   <h2>List of Vinyl Records</h2>
 
-  <%= link_to("Add New Record", {:action => 'new'}, :class => 'action new') %>
+
 
   <table class="listing" summary="Record list">
     <tr class="header">
@@ -19,12 +19,15 @@
       <td><%= record.searching %></td>
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => record.id}, :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Edit", {:action => 'edit', :id => record.id}, :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
     </tr>
     <% end %>
   </table>
+
+  <%= link_to("Add New Record", {:action => 'new'}, :class => 'action new') %>
+
 </div>
 
 <!-- 09_02 -->

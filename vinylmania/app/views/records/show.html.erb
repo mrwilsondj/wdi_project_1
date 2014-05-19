@@ -1,9 +1,7 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
 <div class="records show">
   <h2>Show Record</h2>
 
-  <table summary="Records details">
+  <table summary="Records Details">
     <tr>
       <th>Artist</th>
       <td><%= @record.artist %></td>
@@ -24,4 +22,6 @@
   </table>
 
 </div>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
