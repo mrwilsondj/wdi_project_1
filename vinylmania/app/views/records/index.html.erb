@@ -1,7 +1,8 @@
+<!--  a link that will go to another page? -->
+
 <div class="records index">
-  <h2>List of Vinyl Records</h2>
 
-
+  <h1>Your Collection</h1>
 
   <table class="listing" summary="Record list">
     <tr class="header">
@@ -9,7 +10,7 @@
       <th>Artist</th>
       <th>Releases</th>
       <th>Label</th>
-      <th>Searching</th>
+      <th>Controls</th>
     </tr>
     <% @records.each do |record| %>
     <tr>
@@ -18,16 +19,23 @@
       <td><%= record.lables %></td>
       <td><%= record.searching %></td>
       <td class="actions">
+         <!--  go to show action in the records controller -->
         <%= link_to("Show", {:action => 'show', :id => record.id}, :class => 'action show') %>
+        <!--  go to edit action in the records controller -->
         <%= link_to("Edit", {:action => 'edit', :id => record.id}, :class => 'action edit') %>
-        <%= link_to("Delete", '#', :class => 'action delete') %>
+        <!--  go to  delete action in the records controller -->
+        <%= link_to("Delete", {:action => 'delete', :id => record.id}, :class => 'action delete') %>
       </td>
     </tr>
     <% end %>
   </table>
 
-  <%= link_to("Add New Record", {:action => 'new'}, :class => 'action new') %>
+  <%= link_to("Add a New Record", {:action => 'new'}, :class => 'action new') %>
+<%= @artist_name %>
+<img src= <%= @artist_image %> />
 
 </div>
 
-<!-- 09_02 -->
+
+
+

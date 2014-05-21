@@ -1,0 +1,7 @@
+<h3>Add New Album:</h3>
+<%= simple_form_for @album do |f| %>
+  <%= f.input :artist, label: 'Artist' %>
+  <%= f.input :title, label: 'Title' %>
+  <%= f.input :label, label: 'Label' %>
+  <%= f.button :submit, 'Add Album' %>
+<% end %>

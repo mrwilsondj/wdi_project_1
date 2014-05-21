@@ -27,6 +27,8 @@ gem 'pry'
 gem 'pry-rails'
 gem 'faker'
 gem 'bcrypt'
+gem 'discogs-wrapper', '~> 1.1.4'
+gem 'httparty'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 # gem 'spring',        group: :development

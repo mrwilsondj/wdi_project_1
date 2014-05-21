@@ -1,2 +1,16 @@
-<h1>Records#delete</h1>
-<p>Find me in app/views/records/delete.html.erb</p>
+
+
+<div class="records delete">
+  <h2>Delete a Record</h2>
+
+  <%= form_for(:record, :url => {:action => 'destroy', :id => @record.id}) do |f| %>
+
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Record") %>
+    </div>
+
+  <% end %>
+</div>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>

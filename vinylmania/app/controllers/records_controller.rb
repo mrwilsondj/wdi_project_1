@@ -1,9 +1,15 @@
 class RecordsController < ApplicationController
-
-  layout false
+require "discogs"
 
   def index
     @records = Record.all
+
+    artist_params = params[:record][:artist].to_s
+        wrapper = Discogs::Wrapper.new("Vinylmania")
+    artist = wrapper.get_artist(artist_params)
+    @artist_name = artist.name
+    @artist_image = artist.images[2].uri150
+
   end
 
   def show
@@ -11,12 +17,13 @@ class RecordsController < ApplicationController
   end
 
   def new
+    # @album = Album.new
     @record = Record.new({:artist => "Artist"})
   end
 
   def create
     #strong params whitelisting ===> private down below
-    @record = Record.new(subject_params)
+    @record = Record.new(record_params)
     # saving the record....
     if @record.save
       # if save worked, redirect to index action
@@ -28,15 +35,16 @@ class RecordsController < ApplicationController
   end
 
   def edit
+    #finds the record by id number in db
     @record = Record.find(params[:id])
   end
 
   def update
-    # find an existing record...
+    # find an existing record in db...
     @record = Record.find(params[:id])
     # update the record
     # note the strong params whitelisting ===> private down below
-    if @record.update_attributes(subject_params)
+    if @record.update_attributes(record_params)
       # if update record worked, redirect to show page and note the id so the form can work
       redirect_to(:action => 'show', :id => @record.id)
     else
@@ -46,12 +54,21 @@ class RecordsController < ApplicationController
   end
 
   def delete
+     #finds the record by id number in db to delete
+     @record = Record.find(params[:id])
+  end
+
+    def destroy
+     #finds the record by id number in db to delete
+     record = Record.find(params[:id])
+     record.destroy
+     redirect_to(:action => 'index')
   end
 
   private
     # this is mapped from the def create method above
-    # subject_params attributes that re allowed to be updated (for security reasons) and mass assigned
-    def subject_params
+    # subject_params attributes that are allowed to be updated (for security reasons) and mass assigned
+    def record_params
       params.require(:record).permit(:artist, :releases, :lables, :searching)
     end
 end
